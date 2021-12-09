@@ -96,7 +96,7 @@ const MenuLinks = ({ isOpen }: MenuLinkProps) => {
   );
 };
 
-const NavBarContainer = ({ children, ...props }) => {
+const NavBarContainer = ({ children, ...props }:any) => {
   return (
     <Flex
       as="nav"
