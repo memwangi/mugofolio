@@ -19,7 +19,7 @@ export const Header = () => {
 					fontWeight="semibold"
 					fontSize={["4xl", "5xl", "5xl"]}
 				>
-					Hi<span>👋</span> , It's Joseph :)
+					Hi<span>👋</span> , It&apos;s Joseph :)
 				</Text>
 				<Text fontSize={["md", "xl", "xl"]} color="gray.200">
 					A multidisciplinary digital product designer who codes and writes. I
