@@ -18,11 +18,6 @@ interface IParams extends ParsedUrlQuery {
 const serializers = {
 	
 	types: {
-		code: (props: { node: { language: any; code: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }; }) => (
-			<pre data-language={props.node.language}>
-				<code>{props.node.code}</code>
-			</pre>
-		),
 		mainImage: (props: { node: { alt: string | undefined; caption: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }; }) => (
 			<figure>
 				<Image
