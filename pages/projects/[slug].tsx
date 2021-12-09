@@ -6,6 +6,7 @@ import { Footer } from "../../components/footer";
 import { ParsedUrlQuery } from "querystring";
 import { PortableText, sanityClient, urlFor } from "../../lib/sanity";
 import React from "react";
+import { BlockContentProps } from "@sanity/block-content-to-react";
 
 const ReactDOM = require("react-dom");
 const BlockContent = require("@sanity/block-content-to-react");
@@ -15,23 +16,14 @@ interface IParams extends ParsedUrlQuery {
 }
 
 const serializers = {
-	list: ({props}:any) => {
-		const { type } = props;
-		const bullet = type === "bullet";
-		if (bullet) {
-			return <ul>{props.children}</ul>;
-		}
-		return <ol>{props.children}</ol>;
-	},
-	listItem: ({props}:any) => <li>{props.children}</li>,
-
+	
 	types: {
-		code: ({props}:any) => (
+		code: (props: { node: { language: any; code: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }; }) => (
 			<pre data-language={props.node.language}>
 				<code>{props.node.code}</code>
 			</pre>
 		),
-		mainImage: ({props}:any) => (
+		mainImage: (props: { node: { alt: string | undefined; caption: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }; }) => (
 			<figure>
 				<Image
 					p={4}
@@ -44,7 +36,7 @@ const serializers = {
 				<figcaption>{props.node.caption}</figcaption>
 			</figure>
 		),
-		block({props}:any) {
+		block(props: { node: { style: any; }; children: {} | null | undefined; }) {
 			switch (props.node.style) {
 				case "h1":
 					return (
@@ -113,6 +105,7 @@ export const Project = ({
 	const post = project;
 	const lastUpdate = new Date(Date.parse(post.lastUpdate));
 	return (
+		<VStack>
 		<VStack bg="purple.800" height="maxContent" spacing={6} width="full">
 			<NavBar />
 			<VStack
@@ -134,7 +127,12 @@ export const Project = ({
 						Last updated on, {lastUpdate.toDateString()}
 					</Text>
 				</Stack>
-				<Stack borderRadius="md" spacing={4} alignItems="center" px={[4, 20, 20]}>
+				<Stack
+					borderRadius="md"
+					spacing={4}
+					alignItems="center"
+					px={[4, 20, 20]}
+				>
 					<Text
 						p={4}
 						color="gray.400"
@@ -145,12 +143,12 @@ export const Project = ({
 						{post.description}
 					</Text>
 					<Image
-							src={post.cover}
-							alt="Touch you"
-							objectFit="cover"
-							height="full"
-							width="full"
-						/>
+						src={post.cover}
+						alt="Touch you"
+						objectFit="cover"
+						height="full"
+						width="full"
+					/>
 				</Stack>
 			</VStack>
 
@@ -158,7 +156,9 @@ export const Project = ({
 				<PortableText blocks={post?.body} serializers={serializers} />
 			</Stack>
 
-			<Footer />
+			
+		</VStack>
+		<Footer />
 		</VStack>
 	);
 };
