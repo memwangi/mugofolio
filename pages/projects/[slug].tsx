@@ -94,7 +94,8 @@ export const Project = ({
 	project,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	const post = project;
-	const lastUpdate = new Date(Date.parse(post.lastUpdate));
+	// const lastUpdate = new Date(Date.parse(post.lastUpdate));
+	const lastUpdate = new Date(Date.now());
 	return (
 		<VStack>
 		<VStack bg="purple.800" height="maxContent" spacing={6} width="full">
