@@ -1,5 +1,5 @@
-import { Stack, VStack, Box, Container } from "@chakra-ui/layout";
-import { Text, Heading, Image, Button } from "@chakra-ui/react";
+import { Stack, VStack } from "@chakra-ui/layout";
+import { Text, Heading, Image } from "@chakra-ui/react";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { NavBar } from "../../components/nav";
 import { Footer } from "../../components/footer";
