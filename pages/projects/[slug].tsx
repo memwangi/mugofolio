@@ -11,10 +11,6 @@ import { BlockContentProps } from "@sanity/block-content-to-react";
 const ReactDOM = require("react-dom");
 const BlockContent = require("@sanity/block-content-to-react");
 
-interface IParams extends ParsedUrlQuery {
-	slug: string;
-}
-
 const serializers = {
 	
 	types: {
@@ -174,7 +170,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-	const { slug } = context.params as IParams;
+	const slug = context.params?.slug as string;
 	const project = await sanityClient.fetch(projectQuery, { slug });
 
 	return {
