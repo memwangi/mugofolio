@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"next --port $PORT\" \"cd designfolio && sanity start\"",
-    "build": "echo 'Building Sanity to public/studio' && cd designfolio && sanity build && cd .. && next build",
+    "build": "echo 'Building Sanity to public/studio' && cd designfolio && sanity install && sanity build ../public/studio -y && cd .. && next build",
     "start": "vercel dev",
     "lint": "next lint"
   },
