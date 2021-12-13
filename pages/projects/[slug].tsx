@@ -94,8 +94,7 @@ export const Project = ({
 	project,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	const post = project;
-	// const lastUpdate = new Date(Date.parse(post.lastUpdate));
-	const lastUpdate = new Date(Date.now());
+	const lastUpdate = new Date(Date.parse(post?.lastUpdate));
 	return (
 		<VStack>
 		<VStack bg="purple.800" height="maxContent" spacing={6} width="full">
@@ -171,7 +170,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-	const slug = context.params?.slug as string;
+	const {slug = ""} = context.params as ParsedUrlQuery
 	const project = await sanityClient.fetch(projectQuery, { slug });
 
 	return {
