@@ -11,3 +11,4 @@ export interface Project extends ProjectPreview {
 	body: string;
 	subtitle: string;
 }
+

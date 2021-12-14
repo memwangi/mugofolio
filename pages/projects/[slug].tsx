@@ -93,8 +93,7 @@ const projectQuery = `*[_type == "post" && slug.current ==$slug][0] {
 export const Project = ({
 	project,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-	const post = project;
-	const lastUpdate = new Date(Date.parse(post?.lastUpdate));
+	const lastUpdate = new Date(Date.parse(project?.lastUpdate));
 	return (
 		<VStack>
 		<VStack bg="purple.800" height="maxContent" spacing={6} width="full">
@@ -112,10 +111,10 @@ export const Project = ({
 						textAlign="center"
 						fontWeight="semibold"
 					>
-						{post.title}
+						{project?.title}
 					</Heading>
 					<Text color="gray.400" fontSize="xs" fontWeight="semibold">
-						Last updated on, {lastUpdate.toDateString()}
+						Last updated on, {lastUpdate?.toDateString()}
 					</Text>
 				</Stack>
 				<Stack
@@ -131,10 +130,10 @@ export const Project = ({
 						textAlign="center"
 						fontWeight="regular"
 					>
-						{post.description}
+						{project?.description}
 					</Text>
 					<Image
-						src={post.cover}
+						src={project?.cover}
 						alt="Touch you"
 						objectFit="cover"
 						height="full"
@@ -144,7 +143,7 @@ export const Project = ({
 			</VStack>
 
 			<Stack bg="white" px={[6, 60, 60]} py={6}>
-				<PortableText blocks={post?.body} serializers={serializers} />
+				<PortableText blocks={project?.body} serializers={serializers} />
 			</Stack>
 
 			
