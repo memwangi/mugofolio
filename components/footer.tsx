@@ -10,8 +10,8 @@ export const Footer = () => {
 			spacing={4}
 			bg="gray.100"
 			height="maxContent"
-			width="full"
 			alignContent="center"
+			width="full"
 		>
 			<Stack bg="gray.200" px={[4, 8, 8]} py={[4,4,4]} boxShadow="baseline" borderRadius="md" alignContent="center" justifyItems="center">
 				<Text alignSelf="center" fontSize="md" color="black.100" fontWeight="medium">Want to say hi?👇</Text>
@@ -68,9 +68,10 @@ export const Footer = () => {
 						twitter.com/anothermugo
 					</Link>
 				</HStack>
+				<Text fontSize="md" color="gray.500" fontWeight="medium">Built by Mugo :)</Text>
 			</Wrap>
 
-			<Text alignSelf="center" fontSize="md" color="gray.500" fontWeight="medium">Built by Mugo :)</Text>
+			
 		</VStack>
 	);
 };

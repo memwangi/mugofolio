@@ -5,7 +5,7 @@ import type {
 	GetServerSideProps,
 	InferGetStaticPropsType,
 } from "next";
-import { VStack, SimpleGrid, Text } from "@chakra-ui/layout";
+import { VStack, SimpleGrid, Text, Wrap } from "@chakra-ui/layout";
 import { ProjectCard } from "../components/projectcard";
 import Image from "next/image";
 import Header from "../components/header";
@@ -34,20 +34,29 @@ const Home: NextPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	const data = [...projects];
 	return (
-		<SimpleGrid>
+		<VStack width="100vw">
 			<Header />
-			<VStack spacing={10} px={4} py={4}>
+			<VStack width={["full","full","full"]} spacing={10} px={4} py={4}>
 				<Text fontSize="xl" fontWeight="semibold" alignSelf="start">
 					Projects({data.length})
 				</Text>
-				<SimpleGrid columns={[1, 2, 2]} spacing={[8, 8, 8]}>
-					{data.map((project, index) => (
-						<ProjectCard projectID={project._id} description={project.description} slug={project.slug.current} imageUrl={project.cover} title={project.title} key={index} />
-					))}
-				</SimpleGrid>
+				<VStack>
+					<SimpleGrid columns={[1, 2, 2]} spacing={[8, 8, 8]}>
+						{data.map((project, index) => (
+							<ProjectCard
+								projectID={project._id}
+								description={project.description}
+								slug={project.slug.current}
+								imageUrl={project.cover}
+								title={project.title}
+								key={index}
+							/>
+						))}
+					</SimpleGrid>
+				</VStack>
 			</VStack>
 			<Footer />
-		</SimpleGrid>
+		</VStack>
 	);
 };
 

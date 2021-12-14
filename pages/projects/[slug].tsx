@@ -67,7 +67,7 @@ const serializers = {
 					return <blockquote className="">{props.children}</blockquote>;
 
 				case "normal":
-					return <Text fontSize={["md", "xl", "xl"]}>{props.children}</Text>;
+					return <Text fontSize={["md", "md", "md"]}>{props.children}</Text>;
 
 				default:
 					return <Text fontSize="xl">{props.children}</Text>;

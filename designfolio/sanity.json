@@ -2,7 +2,8 @@
   "root": true,
   "api": {
     "projectId": "27t8yf6t",
-    "dataset": "production"
+    "dataset": "production",
+    "basePath": "/studio"
   },
   "project": {
     "name": "designfolio"

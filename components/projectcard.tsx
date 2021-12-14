@@ -18,7 +18,7 @@ export const ProjectCard = ({
 			borderRadius="lg"
 			borderWidth="thin"
 			alignItems="flex-start"
-			width={["sm", "md", "md"]}
+			width={["sm","md","md"]}
 		>
 			<Stack>
 				<Image

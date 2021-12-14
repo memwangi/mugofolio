@@ -4,7 +4,7 @@ import NavBar from "./nav";
 
 export const Header = () => {
 	return (
-		<VStack spacing="2" bgGradient="linear(to-b, #5629E8, purple.300 )">
+		<VStack bgGradient="linear(to-b, #5629E8, purple.300 )" width="full">
 			<NavBar />
 			<VStack
 				px={[8, 20, 20]}
@@ -21,15 +21,15 @@ export const Header = () => {
 					Hi<span>👋</span> , It&apos;s Joseph :)
 				</Text>
 
-				<Text fontSize={["md", "xl", "xl"]} color="gray.200">
+				<Text fontSize={["md", "xl", "xl"] } color="gray.200">
 					A multidisciplinary digital product designer who codes and writes. I
 					thrive in breaking down complex problems into use cases and ultimately
 					designing solutions that are a joy to own and use, on both mobile and
 					web user interfaces.
 				</Text>
-				<Button size="md" colorScheme="teal">
+				{/* <Button size="md" colorScheme="teal">
 					See Recent Work 👇
-				</Button>
+				</Button> */}
 			</VStack>
 		</VStack>
 	);
