@@ -3,7 +3,11 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"next --port $PORT\" \"cd designfolio && sanity start\"",
-    "build": "echo 'Building Sanity to public/studio' && cd designfolio && sanity install && sanity build ../public/studio -y && cd .. && next build",
+    "build": "concurrently \"npm run build:sanity\" \"npm run build:web\"",
+    "build:web": "next build",
+    "start:web": "next start",
+    "build:sanity": "cd designfolio && sanity build ../public/studio -y && cd ..",
+    "start:sanity": "cd studio && sanity start",
     "start": "vercel dev",
     "lint": "next lint"
   },
