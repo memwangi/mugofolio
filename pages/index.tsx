@@ -34,7 +34,7 @@ const Home: NextPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	const data = [...projects];
 	return (
-		<VStack height="maxContent" width="max" alignContent="center">
+		<VStack height="maxContent" width="maxContent" alignContent="center">
 			<Header />
 			<VStack spacing={10} px={4} py={4}>
 				<Text fontSize="xl" fontWeight="semibold" alignSelf="start">
