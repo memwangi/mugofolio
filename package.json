@@ -6,7 +6,7 @@
     "build": "concurrently \"npm run build:sanity\" \"npm run build:web\"",
     "build:web": "next build",
     "start:web": "next start",
-    "build:sanity": "cd designfolio && sanity install && sanity build ../public/studio -y && cd .. && start:sanity",
+    "build:sanity": "cd designfolio && sanity install && sanity build ../public/studio -y && cd .. && npm run start:sanity",
     "start:sanity": "cd studio && sanity start",
     "start": "vercel dev",
     "lint": "next lint"
