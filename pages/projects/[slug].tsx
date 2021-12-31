@@ -4,7 +4,7 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { NavBar } from "../../components/nav";
 import { Footer } from "../../components/footer";
 import { ParsedUrlQuery } from "querystring";
-import { PortableText, sanityClient, urlFor } from "../../lib/sanity";
+import { PortableText, sanityClient, urlFor } from "../../api/sanity";
 import { BlockContentProps } from "@sanity/block-content-to-react";
 import serializers from "../../server/serializers";
 

@@ -11,7 +11,7 @@ import Image from "next/image";
 import Header from "../components/header";
 import { Footer } from "../components/footer";
 
-import { sanityClient, urlFor, PortableText } from "../lib/sanity";
+import { sanityClient, urlFor, PortableText } from "../api/sanity";
 
 const projectsQuery = `*[_type=="post"]{
 	_id,

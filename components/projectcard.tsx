@@ -1,7 +1,7 @@
 import { SimpleGrid, VStack, Box, Container, Wrap } from "@chakra-ui/layout";
 import { Stack, Image, Text, Heading, Button } from "@chakra-ui/react";
 import Link from "next/link";
-import { ProjectPreview } from "../lib/utils";
+import { ProjectPreview } from "../api/utils";
 
 export const ProjectCard = ({
 	projectID,
