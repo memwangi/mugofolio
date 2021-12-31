@@ -50,7 +50,7 @@ export const Project = ({
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	const preview = context.preview
-	const { slug = "" } = context.params as ParsedUrlQuery;
+	const { slug = " " } = context.params as ParsedUrlQuery;
 	const post = await getClient(preview).fetch(postQuery, { slug });
 
 	
