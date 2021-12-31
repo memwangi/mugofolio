@@ -6,7 +6,7 @@ import { ChakraProvider, VStack } from "@chakra-ui/react";
 import theme from "../components/theme";
 import "../components/theme/styles.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<ChakraProvider theme={theme}>
 			<VStack>
@@ -20,5 +20,3 @@ function MyApp({ Component, pageProps }: AppProps) {
 		</ChakraProvider>
 	);
 }
-
-export default MyApp;

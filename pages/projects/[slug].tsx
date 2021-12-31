@@ -5,76 +5,13 @@ import { NavBar } from "../../components/nav";
 import { Footer } from "../../components/footer";
 import { ParsedUrlQuery } from "querystring";
 import { PortableText, sanityClient, urlFor } from "../../lib/sanity";
-import React from "react";
 import { BlockContentProps } from "@sanity/block-content-to-react";
+import serializers from "../../server/serializers";
 
 const ReactDOM = require("react-dom");
 const BlockContent = require("@sanity/block-content-to-react");
 
-const serializers = {
-	
-	types: {
-		mainImage: (props: { node: { alt: string | undefined; caption: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }; }) => (
-			<figure>
-				<Image
-					p={4}
-					src="{urlFor(props.node.asset)}"
-					alt={props.node.alt}
-					width="600"
-					style={{ borderRadius: "5px" }}
-				/>
 
-				<figcaption>{props.node.caption}</figcaption>
-			</figure>
-		),
-		block(props: { node: { style: any; }; children: {} | null | undefined; }) {
-			switch (props.node.style) {
-				case "h1":
-					return (
-						<Heading
-							as="h1"
-							py={2}
-							size="xl"
-							color="black.600"
-							fontWeight="bold"
-						>
-							{props.children}
-						</Heading>
-					);
-
-				case "h2":
-					return (
-						<Heading as="h2" py={2} size="lg">
-							{props.children}
-						</Heading>
-					);
-
-				case "h3":
-					return (
-						<Heading as="h3" py={2} size="md">
-							{props.children}
-						</Heading>
-					);
-
-				case "h4":
-					return (
-						<Heading as="h4" py={2} size="md">
-							{props.children}
-						</Heading>
-					);
-
-				case "blockquote":
-					return <blockquote className="">{props.children}</blockquote>;
-
-				case "normal":
-					return <Text fontSize={["md", "md", "md"]}>{props.children}</Text>;
-
-				default:
-					return <Text fontSize="xl">{props.children}</Text>;
-			}
-		},
-	},
-};
 
 const projectQuery = `*[_type == "post" && slug.current ==$slug][0] {
     _id,
