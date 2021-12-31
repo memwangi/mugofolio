@@ -65,11 +65,15 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const paths = await getClient().fetch(
-		groq`*[_type == "post" && defined(slug.current)]`
+		`*[_type == "post" && defined(slug.current)] {
+			"params": {
+				"slug": slug.current
+			}
+		}`
 	);
 
 	return {
-		paths: paths.map((slug: any) => ({params: {slug}})),
+		paths,
 		fallback: true,
 	};
 };
