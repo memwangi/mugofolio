@@ -1,7 +1,6 @@
 import { SimpleGrid, VStack, Box, Container, Wrap } from "@chakra-ui/layout";
 import { Stack, Image, Text, Heading, Button } from "@chakra-ui/react";
 import Link from "next/link";
-import { ProjectPreview } from "../api/utils";
 
 export const ProjectCard = ({
 	projectID,
@@ -9,7 +8,7 @@ export const ProjectCard = ({
 	title,
 	slug,
 	imageUrl,
-}: ProjectPreview) => {
+}:any) => {
 	return (
 		<VStack
 			spacing={3}
