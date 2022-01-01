@@ -2,8 +2,11 @@
   "name": "mugofolio",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"next --port $PORT\" \"cd studio && sanity start\"",
-    "build": "echo 'Building Sanity to public/studio' && cd studio && sanity install && sanity build ../public/studio -y && cd .. && next build",
+     "dev": "concurrently \"next --port $PORT\" \"cd studio && sanity start\"",
+    "build": "concurrently \"npm run build:sanity\" \"npm run build:web\"",
+    "build:web": "next build",
+    "start:web": "next start",
+    "build:sanity": "cd studio && sanity install && sanity build ../public/studio -y",
     "start": "vercel dev",
     "lint": "next lint"
   },
