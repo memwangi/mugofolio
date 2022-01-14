@@ -90,8 +90,7 @@ const MenuLinks = ({ isOpen }: MenuLinkProps) => {
         pt={[2, 2 , 8, 8]}
       >
         <MenuItem to="https://randomtheory.substack.com/welcome">Read My Newsletter</MenuItem>
-        {/* <MenuItem to="/books">TBR</MenuItem> */}
-        <MenuItem to="/">Recent Projects </MenuItem>
+        <MenuItem to="/about">About Me</MenuItem>
       </Stack>
     </Box>
   );
@@ -105,7 +104,7 @@ const NavBarContainer = ({ children, ...props }:any) => {
       justify="space-between"
       wrap="wrap"
       w="100%"
-      px={[8,20,20]}
+      px={[4,20,20]}
       pt={[4,6,6]}
       color={["blue.500", "blue.500", "primary.700", "primary.700"]}
       {...props}

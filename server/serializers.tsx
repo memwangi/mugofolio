@@ -1,5 +1,5 @@
-import { Heading, Text, Image, Box } from "@chakra-ui/react";
-import React from 'react'
+import { Heading, Text, Image, Box, Link, color } from "@chakra-ui/react";
+import React from "react";
 
 export const serializers = {
 	types: {
@@ -23,11 +23,10 @@ export const serializers = {
 					width="600"
 					style={{ borderRadius: "5px" }}
 				/>
-
-				{/* <figcaption>{props.node.caption}</figcaption> */}
 			</Box>
 		),
-		block(props: { node: { style: any }; children: {} | null | undefined }) {
+
+		block(props: { node: { style: any }; children: {} }) {
 			switch (props.node.style) {
 				case "h1":
 					return (
