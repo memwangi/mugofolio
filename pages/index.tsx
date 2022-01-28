@@ -36,7 +36,7 @@ const Home: NextPage = ({
 					<Text fontSize="xl" fontWeight="semibold" alignSelf="start">
 						Projects({data.length})
 					</Text>
-					<SimpleGrid columns={[1, 2, 2]} spacing={[8, 8, 8]}>
+					<SimpleGrid columns={[1, 2, 2]} spacing={[4, 8, 8]}>
 						{data.map((project, index) => (
 							<ProjectCard
 								projectID={project._id}

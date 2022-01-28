@@ -90,7 +90,6 @@ const MenuLinks = ({ isOpen }: MenuLinkProps) => {
         pt={[2, 2 , 8, 8]}
       >
         <MenuItem to="https://randomtheory.substack.com/welcome">Read My Newsletter</MenuItem>
-        <MenuItem to="/about">About Me</MenuItem>
       </Stack>
     </Box>
   );

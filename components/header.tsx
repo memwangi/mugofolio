@@ -41,12 +41,12 @@ export const Header = () => {
 					</Text>
 
 					<Text fontSize={["md", "md", "md"]} color="gray.200">
-						A multidisciplinary digital product designer who codes and writes. I
+						A multidisciplinary digital product designer and front end engineer. I
 						thrive in breaking down complex problems into use cases and
-						ultimately designing solutions that are a joy to own and use, on
+						ultimately designing and building solutions that are a joy to own and use, for
 						both mobile and web user interfaces.
 					</Text>
-					<HStack>
+					{/* <HStack>
 						<Button size="md" colorScheme="teal">
 							Recent Work
 						</Button>
@@ -54,7 +54,7 @@ export const Header = () => {
 						<Button size="md" colorScheme="teal">
 							Get To Know Me
 						</Button>
-					</HStack>
+					</HStack> */}
 				</VStack>
 
 				<VStack width="30%" height="maxContent" alignItems="self-start" {...hidden}>
