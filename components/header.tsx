@@ -17,7 +17,7 @@ export const Header = () => {
 	const hidden = useBreakpointValue({default:"false", other: "true"})
 	return (
 		<VStack
-			bgGradient="linear(to-b, #5629E8, purple.300 )"
+			bg="#5cdb95"
 			width={["full", "full", "full"]}
 			px={[8, 20, 20]}
 		>
@@ -25,19 +25,20 @@ export const Header = () => {
 			<HStack>
 				<VStack
 					px={[8, 20, 20]}
-					py={[4, 10, 10]}
+					py={[4, 20, 20]}
 					alignSelf="flex-start"
-					width={["full","70%"]}
+					width={["full","100%"]}
 					height="maxContent"
 					alignItems="self-start"
 					spacing={6}
 				>
 					<Text
-						color="white"
+						color="gray.50"
 						fontWeight="semibold"
 						fontSize={["3xl", "5xl", "5xl"]}
+						textShadow='1px 1px #fff'
 					>
-						Hi<span>👋</span>, It&apos;s Joseph :)
+						Hi<span color="#05386B">👋</span>, It&apos;s Joseph :)
 					</Text>
 
 					<Text fontSize={["md", "md", "md"]} color="gray.200">
@@ -46,15 +47,7 @@ export const Header = () => {
 						ultimately designing and building solutions that are a joy to own and use, for
 						both mobile and web user interfaces.
 					</Text>
-					{/* <HStack>
-						<Button size="md" colorScheme="teal">
-							Recent Work
-						</Button>
-
-						<Button size="md" colorScheme="teal">
-							Get To Know Me
-						</Button>
-					</HStack> */}
+					
 				</VStack>
 
 				<VStack width="30%" height="maxContent" alignItems="self-start" {...hidden}>
@@ -66,9 +59,10 @@ export const Header = () => {
 					>
 						<Image
 							src={joseph}
-							height={300}
+							height={600}
 							width={300}
 							alt="Joseph Mugo"
+							
 						/>
 					</WrapItem>
 				</VStack>

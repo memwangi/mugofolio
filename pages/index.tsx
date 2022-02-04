@@ -2,7 +2,7 @@ import type { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
 import { VStack, SimpleGrid, Text, Wrap } from "@chakra-ui/layout";
 import { ProjectCard } from "../components/projectcard";
 import Image from "next/image";
-import Header from "../components/header";
+import Header2 from "../components/header2";
 import { Footer } from "../components/footer";
 import { groq } from "next-sanity";
 
@@ -30,7 +30,7 @@ const Home: NextPage = ({
 	const data = [...projects];
 	return (
 		<VStack width="100vw">
-			<Header />
+			<Header2 />
 			<VStack width={["full", "full", "full"]} spacing={10} px={4} py={4}>
 				<VStack>
 					<Text fontSize="xl" fontWeight="semibold" alignSelf="start">

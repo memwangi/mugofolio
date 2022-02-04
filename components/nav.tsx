@@ -65,7 +65,7 @@ type MenuItemProps = {
 const MenuItem = ({ children, isLast, to = "/"}: MenuItemProps) => {
   return (
     <Link href={to}>
-      <Text display="block" size="md" color="white">
+      <Text display="block" size="md" fontWeight="semibold" casing="capitalize" color="#05386B" as='u'>
         {children}
       </Text>
     </Link>
@@ -89,7 +89,8 @@ const MenuLinks = ({ isOpen }: MenuLinkProps) => {
         direction={["column", "row", "row", "row"]}
         pt={[2, 2 , 8, 8]}
       >
-        <MenuItem to="https://randomtheory.substack.com/welcome">Read My Newsletter</MenuItem>
+        <MenuItem to="https://randomtheory.substack.com/welcome">Random Theory</MenuItem>
+        <MenuItem to="/about">About Me</MenuItem>
       </Stack>
     </Box>
   );
@@ -105,7 +106,7 @@ const NavBarContainer = ({ children, ...props }:any) => {
       w="100%"
       px={[4,20,20]}
       pt={[4,6,6]}
-      color={["blue.500", "blue.500", "primary.700", "primary.700"]}
+      color="#05386B"
       {...props}
     >
       {children}
