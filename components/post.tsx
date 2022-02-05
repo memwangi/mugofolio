@@ -6,20 +6,25 @@ import { PortableText, urlFor } from "../lib/sanity";
 import serializers from "../server/serializers";
 
 export const Post = ({ project }: any) => {
-    const lastUpdate = new Date(Date.parse(project?.lastUpdate));
+	const lastUpdate = new Date(Date.parse(project?.lastUpdate));
 	return (
 		<VStack>
-			<VStack bg="purple.800" height="maxContent" spacing={6} width="full">
-				<NavBar />
+			<VStack
+				bg={"brand.background"}
+				minH="maxContent"
+				spacing={6}
+				width="full"
+			>
 				<VStack
-					p={["sm", 40, 40]}
+					py={[20, 40, 40]}
+					px={["sm", 40, 40]}
 					spacing={4}
 					width="inherit"
 					alignItems="center"
 				>
 					<Stack alignItems="center">
 						<Heading
-							size="xl"
+							fontSize={{ base: "lg", md: "xl" }}
 							color="white"
 							textAlign="center"
 							fontWeight="semibold"

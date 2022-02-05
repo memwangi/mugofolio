@@ -82,8 +82,9 @@ export default function WithSubnavigation() {
 						href={"#"}
                         
 					>
-						Contact Me
+						Get In Touch
 					</Button>
+
 				</Stack>
 			</Flex>
 
@@ -100,7 +101,7 @@ const DesktopNav = () => {
 	const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
 	return (
-		<Stack direction={"row"} spacing={4} width={"full"}>
+		<Stack direction={"row"} spacing={4} width={"100vw"} alignContent="center">
 			{NAV_ITEMS.map((navItem) => (
 				<Box key={navItem.label}>
 					<Popover trigger={"hover"} placement={"bottom-start"}>
