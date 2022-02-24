@@ -43,7 +43,7 @@ export default function SplitScreen() {
                         Outside work, I like to do 
 						squats, read great books, and share random thoughts on my newsletter.
 					</Text>
-					<Stack direction={{ base: "column", md: "row" }} spacing={4}>
+					{/* <Stack direction={{ base: "column", md: "row" }} spacing={4}>
 						<Button
                         
 							rounded={"md"}
@@ -56,7 +56,7 @@ export default function SplitScreen() {
 							Get In Touch
 						</Button>
 						<Button rounded={"md"}>Recent Projects</Button>
-					</Stack>
+					</Stack> */}
 				</Stack>
 			</Flex>
 
